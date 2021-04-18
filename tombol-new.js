@@ -1,9 +1,9 @@
 function pdfHTML() {
-    var pembeli = $("#nama-pembeli").text();
+    var pembeli = $(".nama-pembeli").text();
 	var doc = new jsPDF();
-	var elementHTML = $('#body-pembeli').html();
+	var elementHTML = $('.body-pembeli').html();
 	var specialElementHandlers = {
-		'#display-none': function (element, renderer) {
+		'.display-none': function (element, renderer) {
 			return true;
 		}
 	};
@@ -15,4 +15,4 @@ function pdfHTML() {
 	// Save the PDF
 	doc.save(pembeli+'.pdf');
 }
-$("#tombol-invoice").click(pdfHTML);
+$(".tombol-invoice").click(pdfHTML);
